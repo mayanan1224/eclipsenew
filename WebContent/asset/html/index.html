@@ -1,0 +1,655 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
+		<link href="../css/mui.css" rel="stylesheet" />
+		<link href="https://vjs.zencdn.net/7.3.0/video-js.min.css" rel="stylesheet">
+		<link href="../css/tracemess.css" rel="stylesheet" />
+		 <link rel="stylesheet" href="../css/layui.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.3.0/video.min.js"></script>
+		<script src="../js/videojs-contrib-hls.js"></script>
+		<!-- If you'd like to support IE8 -->
+		<script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+		<style type="text/css">       
+			html,body
+			 {margin: 0;           
+			  padding: 0;}    
+		</style>
+	</head>
+	<body>
+		<div class="mui-content">
+		<header class="mui-bar mui-bar-nav">
+			<!-- <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" href="javascript:void(0);" style="color:black;"></a>
+			<input type="hidden" id="OrderID" value=""> -->
+			<h1 class="mui-title">溯源信息</h1>
+		</header>
+		<div class="bo">
+			<div class="tra">				
+				<div class="tra-id">
+					<img id="goodsPic" src="../img/logo_200px.png" alt="" id="headPic" style="width: 6.25rem;height: 6.25rem;"/>
+					<p style="color: white;font-size: 0.9375rem;" class="goodsName"></p>
+				</div>				
+			</div>
+			<ul class="week">
+				<li>
+					<p class="goodsID" style="color:#FE714B;">0</p>
+					<p class="trwe" style="font-size: 0.75rem;">商品编号</p>
+				</li>					
+				<li>
+					<p class="endTime" style="color:#FE714B;">无</p>
+					<p class="trwe" style="font-size: 0.75rem;border-left:1px solid #ccc;border-right:0.0625rem solid #ccc;">预计产出时间</p>
+				</li>					
+				<li>
+					<p  class="areaName" style="color:#FE714B;">无</p>
+					<p class="trwe" style="font-size: 0.75rem;">生产区域</p>
+				</li>
+			</ul>
+		</ul>
+		
+		<div class="shipin weizhi" style="height: 12.5rem;margin-top: -11px;">
+			<div class="sci">
+				<img class="pic2" src="../img/dgrrr.png" />
+				<span class="acs">位置信息</span>
+			</div>
+			<div id="container" style="width:100%; height:9.375rem;margin-top: 0.625rem;"></div>
+			<div id="container" tabindex="0" class="" style="margin:0 auto;width:100%;height:100%; text-align: center;"></div>
+		</div>
+		<div class="shipin svedio" style="height: 140%;margin-top:-4px;">
+			<div class="sci">
+				<img class="pic2" src="../img/dgrrr.png" />
+				<span class="acs">视频溯源</span>
+			</div>
+			<div>
+				</br>
+				<div style="width:45%;height:100%;float:left;">
+					<p id="tNode1" style="font-size: 0.875rem;">视频文件</p>
+					<p id="tNode2" style="font-size: 0.875rem;">视频直播通道</p>
+					<p id="tNode3" style="font-size: 0.875rem;">最新视频录播时间</p>
+				</div>
+				<div style="width:55%;height:100%;float:right;">
+					<p id="tNode4"><span style=" color: orange; font-size: 0.875rem;" class="videoNum"></span>个</p>
+					<p id="tNode5"><span style=" color: orange; font-size: 0.875rem;" class="liveTime"></span>个</p>
+					<p id="tNode6"><span style=" color: orange; font-size: 0.875rem;position: relative;top:2px;" class="lastTime"></span></p>
+				</div>
+			</div>
+			<div id="abc" style="width:98%;height:0.0625rem;border-top:solid  rgb(144,144,144) 1px;position:relative;top:4rem;"></div>
+			<div id="trace_Live" style="width:100%;height: 13.75rem;position: relative;top: 4.4rem;">
+				
+			<video id="my-player" height="220" width="300"
+							class="video-js vjs-default-skin" controls
+							preload="auto" data-setup='{}'
+							style="position: absolute; left: 0;width= 100%; height=100%; object-fit: fill" >
+							
+						</video>
+			</div>
+			<div class="div" style="position: relative;top: 4rem;">
+			    <div class="box">
+
+			    </div>
+			</div>
+		</div>
+		<div class="shipin1 dnasuyuan" style="height: 14.5rem;margin-top:-4px;">
+			<div class="sci">
+				<img class="pic2" src="../img/drrt.png" />
+				<span class="acs">DNA溯源</span>
+			</div>
+			<div>
+				</br>
+				<div style="width:30%;height:100%;float:left;">
+					<p class="" style="font-size: 0.875rem;">采集人</p>
+					<p class="" style="font-size: 0.875rem;">采集时间</p>
+					<p class="" style="font-size: 0.875rem;">所属农场</p>
+				</div>
+				<div style="width:70%;height:100%;float:right;position: relative;top:0.125rem;">
+					<p><span style=" color: orange; font-size: 0.875rem;" class="cName">段立东</span></p>
+					<p><span style=" color: orange; font-size: 0.875rem;" class="cTime">2019-10-19 03:08:21</span></p>
+					<p><span style=" color: orange; font-size: 0.875rem;" class="factory">北京帝都农场</span></p>
+				</div>
+			</div>
+			<div style="width:98%;height:0.0625rem;border-top:solid  rgb(144,144,144) 1px;position:relative;top:64px;"></div>
+			<div style="width:98%;height: 6.25rem;position: relative;top: 1rem;">
+				<img src="../img/dna-pic.jpg" style="width: 100%;height: 100%;"/>
+			</div>
+		</div>
+		<div class="shipin1 qusuyuan" style="height: 13rem;margin-top:-4px;">
+			<div class="sci">
+				<img class="pic2" src="../img/feed.png" />
+				<span class="acs">区块链溯源</span>
+			</div>
+			<div id="btDataList" class="sci5" style="overflow-y: auto;height: 10rem;width: 100%;margin-top:15px;">
+				
+			</div>
+		</div>
+		<div class="shipin1 jianying" style="height: 18rem;margin-top:-4px;">
+			<div class="sci">
+				<img class="pic2" src="../img/growpic.png" />
+				<span class="acs">生长剪影</span>
+			</div>
+			<div id="shengzhang" class="sci5" style="overflow-y: auto;height: 15.125rem;width: 100%;margin-top:15px;">
+				
+				<div class="golf" style="height: 85px;width: 100%;">
+					<div class="photo2"><img class="picF" src="../img/sz.png"></div>
+					<div class="photo">
+						<span id="playv" class="play_video"><!-- <img class="picT" src="../img/tmp05.png" onclick="liveClick('http://sksy-live01.oss-cn-shanghai.aliyuncs.com/TEST4_2019-04-07T10:58:40Z3_live.m3u8')" > --></span></div>
+					<div class="video" style="display:none;">
+					   <video id="my-player1" height="220" width="400"
+							class="video-js vjs-default-skin" controls
+							preload="auto" data-setup='{}'
+							style="position: absolute; left: 0;width= 100%; height=100%; object-fit: fill" >
+							
+						</video>
+					</div>
+					<div class="intro" style="height: 85px;"><p class="szTime" id="oneTime" style="color: orange; font-size: 0.875rem;text-align: center;margin-top: 2.6rem;float:left;position: relative;left:20px;"></p></div>
+				</div>
+				
+			</div>
+			
+		</div>
+		
+		<div class="shipin1 shijian" style="height: 12.75rem;margin-top:-4px;">
+			<div class="sci">
+				<img class="pic2" src="../img/growpic.png" />
+				<span class="acs">溯源事件</span>
+			</div>
+			<div id="shijian" style="overflow-y: auto;height: 10rem;width: 100%;margin-top:15px;">
+
+			</div>
+			
+		</div>
+		<div class="shipin1 wuliu" style="height:18rem;margin-top:-4px;">
+			<div class="sci">
+				<img class="pic2" src="../img/drrt.png" />
+				<span class="acs">物流信息</span>
+			</div>
+			<br/>
+			<div id="logistics" class="sci5" style="overflow-y: auto;height: 14.625rem;width: 100%;">
+				
+			</div>
+		</div>
+		<div class="shipin" style="display: none;">
+			<div class="sci">
+				<img class="pic2" src="../img/drrt.png" />
+				<span class="acs">仓储信息</span>
+			</div>
+			<div>
+				</br>
+				<div style="width:30%;height:100%;float:left;">
+					<p class="" style="font-size: 0.875rem;">出库人</p></br>
+					<p class="" style="font-size: 0.875rem;">出库时间</p></br>
+					
+				</div>
+				<div style="width:70%;height:100%;float:right;position: relative;top:2px;">
+					<p><span style=" color: orange; font-size: 0.875rem;" class="cName">段立东</span></p></br>
+					<p><span style=" color: orange; font-size: 0.875rem;" class="cTime">2019-10-19 03:08:21</span></p>
+					
+				</div>
+			</div>
+		</div>
+		
+		<div class="shipin" style="display: none;">
+			<div class="sci">
+				<img class="pic2" src="../img/drrt.png" />
+				<span class="acs">分拣/生产信息</span>
+			</div>
+			<div>
+				</br>
+				<div style="width:30%;height:100%;float:left;">
+					<p class="" style="font-size: 0.875rem;">分拣人</p></br>
+					<p class="" style="font-size: 0.875rem;">分拣时间</p></br>
+					
+				</div>
+				<div style="width:70%;height:100%;float:right;position: relative;top:2px;">
+					<p><span style=" color: orange; font-size: 0.875rem;" class="sName">段立东</span></p></br>
+					<p><span style=" color: orange; font-size: 0.875rem;" class="sTime">2019-10-19 03:08:21</span></p>
+				</div>
+			</div>
+		</div>
+		<div class="shipin" style="height: 13rem;display: none;">
+			<div class="sci">
+				<img class="pic2" src="../img/drrt.png" />
+				<span class="acs">环境监测</span>
+			</div>
+			<div>
+				</br>
+				<div style="width:30%;height:100%;float:left;position: relative;top: -0.125rem;">
+					<p class="" style="font-size: 0.875rem;">湿度</p></br>
+					<p class="" style="font-size: 0.875rem;">温度</p></br>
+					<p class="" style="font-size: 0.875rem;">光照</p></br>
+					<p class="" style="font-size: 0.875rem;">颗粒物含量</p>
+				</div>
+				<div id="jdt" style="width:70%;height:100%;float:right;">
+					<div class="layui-progress layui-progress-big" lay-showpercent="true">
+					  <div class="layui-progress-bar" lay-percent="20%"></div>
+					</div></br>
+					<div class="layui-progress layui-progress-big" lay-showpercent="true">
+					  <div class="layui-progress-bar layui-bg-blue" lay-percent="70%"></div>
+					</div></br>
+					<div class="layui-progress layui-progress-big" lay-showpercent="true">
+					  <div class="layui-progress-bar layui-bg-green" lay-percent="50%"></div>
+					</div></br>
+					<div class="layui-progress layui-progress-big" lay-showpercent="true">
+					  <div class="layui-progress-bar layui-bg-cyan" lay-percent="60%"></div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		<div class="guanzhu" style="position: relative;top:-3px;">
+			<div>
+				<div style="width:60%;height:100%;float:left;text-align: center;">
+					</br></br>
+					<p class="" style="font-size: 1rem;color: #000000;margin-top:12px;">长按二维码关注我们</p>
+				</div>
+				<div style="width:30%;height:100%;float:left;margin-right: 0.3125rem;">
+					<img src="../img/sksyxcx.jpg" style="height:100px;">
+				</div>
+			</div>
+		</div>
+		</div>
+		<script src="../js/jquery-1.9.1.js"></script>
+		<script src="../src/layui.js"></script>	
+		<script type="text/javascript" src="../js/constant.js"></script>
+		<script type="text/javascript" src="../js/jquerySession.js"></script>
+		<script src="https://webapi.amap.com/maps?v=1.4.0&key=ae7629718c97bf41ac000811593e4529&callback=init"/></script>
+		<script src="../js/jquery.qrcode.min.js"></script>
+		<script>
+			/* window.onload = function() {
+				$(".layui-progress-text").eq(1).html("25 ゜C");
+				$(".layui-progress-text").eq(2).html("8.3光分");
+				$(".layui-progress-text").eq(3).html("PM12");
+				
+			} */
+			 function textSetting(){                  //根据屏幕宽度设定字体大小
+		        var root = document.documentElement; //获取属性根节点
+		        var w = root.clientWidth;            //获取屏幕宽度
+		        if(w<=300){
+		       		
+		       		var tNode1 = document.getElementById("tNode1");
+		       		tNode1.style.fontSize = 8 + 'px';
+		       		var tNode2 = document.getElementById("tNode2");
+		       		tNode2.style.fontSize = 8 + 'px';
+		       		var tNode3 = document.getElementById("tNode3");
+		       		tNode3.style.fontSize = 8 + 'px';
+		       		var tNode4 = document.getElementById("tNode4");
+		       		tNode4.style.fontSize = 8 + 'px';
+		       		var tNode5 = document.getElementById("tNode5");
+		       		tNode5.style.fontSize = 8 + 'px';
+		       		var tNode6 = document.getElementById("tNode6");
+		       		tNode6.style.fontSize = 8 + 'px';
+		       		var tlist = document.getElementsByTagName("sjzx");
+		       		for (var i = 0; i < tlist.length; i++) {
+						tlist[i].style.fintSize = 8 + 'px';
+					}
+		       	}
+		    }
+		    
+			//paraName 等找参数的名称
+			 function GetUrlParam(paraName) {
+			  var url = document.location.toString();
+			  var arrObj = url.split("?");
+
+			  if (arrObj.length > 1) {
+			  var arrPara = arrObj[1].split("&");
+			  var arr;
+
+			  for (var i = 0; i < arrPara.length; i++) {
+			   arr = arrPara[i].split("=");
+
+			   if (arr != null && arr[0] == paraName) {
+			    return arr[1];
+			   }
+			  }
+			  return "";
+			 }
+			  else {
+			  return "";
+			 }
+			 }
+			
+			function init(){
+				
+				var lng = 116.184393;
+				var lat = 39.928676;
+				var goodsID = GetUrlParam("GoodsID");
+				var orderID = GetUrlParam("OrderID");
+				a=document.all.abc.offsetWidth;
+				b = document.body.offsetWidth;
+				
+				document.getElementById('my-player').style.width=a+'px';
+				document.getElementById('my-player1').style.width=b+'px';
+				var box = document.getElementsByClassName("vjs-big-play-button");
+				box[0].style.marginTop = 65+'px';
+				box[0].style.marginLeft = (a-86-20)/2+'px';
+				if(b>1000){
+					document.getElementById('my-player1').style.height=400+'px';
+					box[1].style.marginTop = 175+'px';
+					box[1].style.marginLeft = (b-86-20)/2+'px';
+				}else{
+					box[1].style.marginTop = 75+'px';
+					box[1].style.marginLeft = (b-86-20)/2+'px';
+					
+				}
+				
+				$.ajax({//线上https://sdyzs.shidongvr.com/sdyzspi
+					url:"http://39.106.152.47/ypsypi/pi.User.getMessageByGIDOrOID.hf",
+					dataType:"json",
+					
+					type:"post",
+					data:'{"MemberID":1,"AppType":1,"OrderID":'+orderID+',"GoodsID":'+goodsID+'}',
+					success:function(data){				
+						var json = eval(data);
+						var btDataList = json.btDataList;
+						var goods = json.TraceStoryList;
+						var TracePDNAList = json.TracePDNAList;
+						var DeliveryList = json.DeliveryList;
+						
+						if(DeliveryList!=null&&DeliveryList!="null"&&DeliveryList!=""&&!jQuery.isEmptyObject(DeliveryList)){
+							
+							for (var i = 0; i < DeliveryList.length-1; i++) {
+								$("#logistics").append(
+										"<div style=''>"
+										+"<div style='width: 15%;float:left;'><img height='73px' src='../img/wuliu.png'></div>"
+										+"<div style='width: 83%;float:left;height:73px;'><span style=' color: orange; font-size: 0.8rem;'>"+DeliveryList[i].Description+"</br>"+DeliveryList[i].AddTime.substring(0,19)+"</span></div></div>"
+								)
+							}
+							$("#logistics").append(
+									"<div style='height:50px;'>"
+									+"<div style='width: 15%;float:left;'><img width='15.83px' src='../img/wuliu1.png'></div>"
+									+"<div style='width: 83%;float:left;height:73px;position:relative;top:-10px;'><span style=' color: orange; font-size: 0.8rem;'>"+DeliveryList[i].Description+"</br>"+DeliveryList[i].AddTime. substring(0,19)+"</span></div></div>"
+							)
+							
+						}else{
+							$(".wuliu").hide();
+						}
+						
+						if(TracePDNAList!=null&&TracePDNAList!=""&&TracePDNAList!="null"&&!jQuery.isEmptyObject(TracePDNAList)){
+							$(".cName").text(TracePDNAList[0].gatherer);
+							$(".cTime").text(TracePDNAList[0].AcquisitionTime.substring(0,19));
+						}else{
+							$(".dnasuyuan").hide();
+						}
+						//商品ID
+						if(goods!=null&&goods!=""&&goods!="null"&&!jQuery.isEmptyObject(goods)){
+							document.getElementById("goodsPic").src = "https://gzjs.shidongvr.com/gzjsdistfile/"+goods[0].ThumbnailPicFileID;
+							$(".goodsID").text(goods[0].GoodsID);
+							$(".endTime").text(goods[0].EndTime==null?'无':goods[0].EndTime.substring(0,10));
+							$(".areaName").text(goods[0].AreaName.length>6?goods[0].AreaName.substring(0,4)+'...':goods[0].AreaName);
+							$(".factory").text(goods[0].FactoryName);
+						}else{
+							$(".goodsID").text(json.GoodsID);
+						}
+						
+						//定位
+						var LiveVideoList = json.LiveVideoList;
+						if(LiveVideoList!=null&&LiveVideoList!=""&&LiveVideoList!="null"&&!jQuery.isEmptyObject(LiveVideoList)){
+							lng = LiveVideoList[0].Lng;
+							lat = LiveVideoList[0].Lat;	
+						}else{
+							$(".weizhi").hide();
+						}
+						 var map = new AMap.Map('container', {
+								          center: [lng, lat],
+								          zoom: 11
+								   });
+						 map.plugin(["AMap.ToolBar"], function() {
+								map.addControl(new AMap.ToolBar());
+						 });
+						var marker;
+						var icon = new AMap.Icon({
+								 image: 'http://vdata.amap.com/icons/b18/1/2.png',
+								 size: new AMap.Size(24, 24)
+						});
+						marker = new AMap.Marker({
+								 offset: new AMap.Pixel(-12, -12),
+								 zIndex: 101,
+								 map: map
+						});
+						
+						var TraceEventList = json.TraceEventList;
+						if(TraceEventList!=null&&TraceEventList!="null"&&TraceEventList!=""&&!jQuery.isEmptyObject(TraceEventList)){
+							for (var i = 0; i < TraceEventList.length; i++) {
+								$("#shijian").append(
+									"<p><span style=' color: orange; font-size: 0.875rem;'>"+TraceEventList[i].AddTime.substring(0,19)+"</span></p>"		
+									+"<p style='margin-bottom:5px;'><span style=' color: orange; font-size: 0.875rem;'>"+TraceEventList[i].Description+"</span></p>"
+								);
+							}
+						}else{
+							$(".shijian").hide();
+						}
+						
+						//视频
+						var VedioRecordList = json.VedioRecordList;
+						if(VedioRecordList!=null&&VedioRecordList!=""&&VedioRecordList!="null"&&!jQuery.isEmptyObject(VedioRecordList)){
+							$(".lastTime").text(VedioRecordList[0].BeginTime.substring(0,19));
+							$("#my-player").append(
+								"<source src='"+VedioRecordList[0].VideoAddress+"' type='application/x-mpegURL'></source>"		
+							);
+							for (var i = 0; i < VedioRecordList.length; i++) {
+								$(".box").append(
+										"<div class='box1' onclick='liveTapClick("+"\""+VedioRecordList[i].VideoAddress+"\""+")'>"+VedioRecordList[0].BeginTime.substring(0,10)+"</div>"
+								);
+							}
+							//生长剪影
+							
+							$("#playv").append(
+								"<img class='picT' height='70px' width='70px' src='https://gzjs.shidongvr.com/gzjsdistfile/"+goods[0].ThumbnailPicFileID+"' onclick='liveClick("+"\""+VedioRecordList[0].VideoAddress+"\""+")'>"
+							);
+							$("#oneTime").append(VedioRecordList[0].BeginTime.substring(0,19));
+							$("my-player1").append(
+									"<source src='"+VedioRecordList[0].VideoAddress+"' type='application/x-mpegURL'></source>"	
+							);
+							
+							for (var i =1; i < VedioRecordList.length; i++) {
+								$("#shengzhang").append(
+										"<div class='golf' style='height: 85px;width: 100%;'>"
+										+"<div class='photo2'><img class='picF' src='../img/sz.png'></div>"
+										+"<div class='photo'><span class='play_video'><img class='picT' src='https://gzjs.shidongvr.com/gzjsdistfile/"+goods[0].ThumbnailPicFileID+"' onclick='liveClick("+"\""+VedioRecordList[i].VideoAddress+"\""+")'></span></div>"
+										
+										+"<div class='intro' style='height: 85px;'><p class='szTime' style='color: orange; font-size: 0.875rem;text-align: center;margin-top: 2.5rem;float:left;position:relative;left:20px;'>"+VedioRecordList[i].BeginTime.substring(0,19)+"</p></div>"
+										+"</div>"
+									);
+							}
+							
+						}else{
+							$(".svedio").hide();
+							$(".jianying").hide();
+							$("#shengzhang").html("");
+							$("trace_Live").hide();
+							$("#my-player").hide();
+							$(".picF").hide();
+						}
+						if(json.LiveVideoCount!=null&&json.LiveVideoCount!=""&&json.LiveVideoCount!="null"){
+							$(".liveTime").text(json.LiveVideoCount);
+						}else{
+							$(".liveTime").text("0");
+						}
+						if(json.VedioCount!=null&&json.VedioCount!=""&&json.VedioCount!="null"){
+							$(".videoNum").text(json.VedioCount);
+						}else{
+							$(".videoNum").text("0");
+						}
+					
+						
+						
+						if(jQuery.isEmptyObject(btDataList)){
+							$(".qusuyuan").hide();
+						}else{
+							//数据中心
+							for (var i = 0; i < btDataList.length; i++) {
+								$("#btDataList").append(
+										"<div class='golf' style='height: 50px;width: 100%;position:relative;top:-11px;'>"
+										+"<div class='photo1'>"
+										+"<p class='sjzx' style='color: orange; font-size: 0.875rem;margin-top: 1rem;float:left;'>"+(btDataList[i].addTime==null?'无':btDataList[i].addTime.substring(0,19))+"</br>"+(btDataList[i].NodeName==null?'无':btDataList[i].NodeName.length>10?(btDataList[i].NodeName.substring(0,8)+"..."):btDataList[i].NodeName)+"</p>"
+										+"</div>"
+										+"<div class='intro1' style='position: relative;top: 10px;float:right;'><img style='width:50px;float:left;' src='../img/tb.png'></div>"
+										+"</div>"
+									);
+							}
+						}
+						$(".layui-progress-text").eq(1).html("25 ゜C");
+						$(".layui-progress-text").eq(2).html("8.3光分");
+						$(".layui-progress-text").eq(3).html("PM12");
+						textSetting();
+					}
+					
+				});
+		       
+		    } 
+			/* jQuery(function(){
+			    $('#qrDiv').qrcode({
+			        render:"canvas",
+			        text: "http://www.baidu.com/",
+			        width : "100",               //二维码的宽度
+			        height : "100", 
+			    });
+			     function convertCanvasToImage(canvas) {
+			            //新Image对象，可以理解为DOM
+			            var image = new Image();
+			            // canvas.toDataURL 返回的是一串Base64编码的URL，当然,浏览器自己肯定支持
+			            // 指定格式PNG
+			            image.src = canvas.toDataURL("image/png");
+			            return image;
+			        }
+			        //获取网页中的canvas对象
+			        var mycanvas1=document.getElementsByTagName('canvas')[0];
+			        //将转换后的img标签插入到html中
+			        var img = convertCanvasToImage(mycanvas1);
+			        $('#wecode').append(img);//imgDiv表示你要插入的容器id
+			}) */
+		</script>
+		<script>
+		layui.use('element', function(){
+		  var $ = layui.jquery
+		  ,element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
+		  
+		  //触发事件
+		  var active = {
+		    setPercent: function(){
+		      //设置50%进度
+		      element.progress('demo', '50%')
+		    }
+		    ,loading: function(othis){
+		      var DISABLED = 'layui-btn-disabled';
+		      if(othis.hasClass(DISABLED)) return;
+		    
+		      //模拟loading
+		      var n = 0, timer = setInterval(function(){
+		        n = n + Math.random()*10|0;  
+		        if(n>100){
+		          n = 100;
+		          clearInterval(timer);
+		          othis.removeClass(DISABLED);
+		        }
+		        element.progress('demo', n+'%');
+		      }, 300+Math.random()*1000);
+		      
+		      othis.addClass(DISABLED);
+		    }
+		  };
+		  
+		  $('.site-demo-active').on('click', function(){
+		    var othis = $(this), type = $(this).data('type');
+		    active[type] ? active[type].call(this, othis) : '';
+		  });
+		});
+		</script>
+		<script type="text/javascript">
+			$(function(){
+			    $(document).bind("click",function(e){
+			        var target  = $(e.target);
+			        if(target.closest(".play_video,.video").length == 0){/*.closest()沿 DOM 树向上遍历，直到找到已应用选择器的一个匹配为止，返回包含零个或一个元素的 jQuery 对象。*/
+			            $(".video").hide();
+						$(".photo2").show();
+						$(".picT").show();
+						$(".szTime").show();
+						changeVideo1("");
+			            $("#fullpage div:first-of-type").removeClass("masked");/*点击其他区域隐藏遮罩层CSS*/
+			        };
+			        e.stopPropagation();
+			    })
+			});
+		 /* function init(){
+		        var map = new AMap.Map('container', {
+		            center: [114.31, 30.52],
+		            zoom: 6
+		        });
+		        map.plugin(["AMap.ToolBar"], function() {
+		            map.addControl(new AMap.ToolBar());
+		        });
+		
+		<!-- 上面是定位，下面是打上标记 -->
+		
+		        var marker;
+		        var icon = new AMap.Icon({
+		            image: 'http://vdata.amap.com/icons/b18/1/2.png',
+		            size: new AMap.Size(24, 24)
+		        });
+		        marker = new AMap.Marker({
+		            offset: new AMap.Pixel(-12, -12),
+		            zIndex: 101,
+		            map: map
+		        });
+		    } */
+		</script>
+		<script type="text/javascript">
+			
+			// videojs 简单使用
+			    var myVideo = videojs('my-player', {
+			        bigPlayButton: true,
+			        textTrackDisplay: false,
+			        posterImage: false,
+			        errorDisplay: false,
+			    })
+			    
+			   var changeVideo = function (vdoSrc) {
+			        if (/\.m3u8$/.test(vdoSrc)) { //判断视频源是否是m3u8的格式
+			            myVideo.src({
+							height:200,
+							src: vdoSrc,
+			                type: 'application/x-mpegURL' //在重新添加视频源的时候需要给新的type的值
+			            })
+			        } else {
+			            myVideo.src(vdoSrc)
+			        }
+			    }
+				var myVideo1 = videojs('my-player1', {
+				    bigPlayButton: true,
+				    textTrackDisplay: false,
+				    posterImage: false,
+				    errorDisplay: false,
+				})
+				var changeVideo1 = function (vdoSrc) {
+					myVideo1.src({
+						height:200,
+						src: vdoSrc,
+				         type: 'application/x-mpegURL' //在重新添加视频源的时候需要给新的type的值
+				     })
+				 }
+				function liveTapClick(src){
+					var objs=document.getElementsByTagName("box1")
+					for(var i=0;i<objs.length;i++)
+					{
+					   objs.style.color="orange";
+					}
+					//$(this).style.color="red";
+					
+					changeVideo(src);
+				}
+				
+				function liveClick(src){
+					changeVideo1(src);
+					$(".photo2").hide();
+					$(".picT").hide();
+					$(".szTime").hide();
+					$("#fullpage div:first-of-type").addClass("masked");/*点击添加遮罩层CSS*/
+					
+					$(".video").show();
+				}
+				
+		</script> 
+	</body>
+
+</html>

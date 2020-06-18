@@ -1,0 +1,29 @@
+@CHARSET "UTF-8";
+.one {
+	width: 465px
+}
+
+.two {
+	width: 76px;
+	text-align: center;
+}
+
+.three {
+	width: 300px;
+}
+
+.four {
+	width: 768px;
+}
+
+.fone {
+	width: 900px;
+}
+
+.ftextare {
+	height: 90px;
+}
+
+.myrow {
+	margin-top: 20px
+}

@@ -1,0 +1,70 @@
+@CHARSET "UTF-8";
+#title-style {
+	font-family: "微软雅黑";
+	line-height: 34px;
+	text-align: left;
+	margin: -6px 0px -18px -2px;
+	color: rgb(131, 105, 105);
+}
+
+.btn {
+	margin-left: 4px;
+}
+
+body {
+	font-family: "微软雅黑";
+	background-color: white
+}
+
+table {
+	font-size: 13px
+}
+
+input,textarea {
+	color: black
+}
+
+.form-success {
+	color: green
+}
+
+.form-error {
+	border-color: red;
+}
+
+.shuline {
+	width: 1px;
+	color: black;
+	float: left;
+}
+
+.yincang {
+	display: none;
+}
+
+.touming {
+	filter: alpha(opacity = 90);
+	-moz-opacity: 0.9;
+	-khtml-opacity: 0.9;
+	opacity: 0.9;
+}
+
+.aTitleClass {
+	color: #909090;
+	cursor: pointer;
+}
+
+.aTitleClass:HOVER {
+	color: #81009D;
+	text-decoration: underline;
+}
+
+.editInput {
+	height: 22px;
+	width: 100%;
+	outline: 0px;
+	BORDER-TOP-STYLE: solid;
+	BORDER-RIGHT-STYLE: solid;
+	BORDER-LEFT-STYLE: solid;
+	BORDER-BOTTOM-STYLE: solid;
+}

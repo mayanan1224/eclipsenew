@@ -1,0 +1,389 @@
+ul,li,p{
+	margin:0;
+	padding:0;
+}
+.amap-logo{
+	display: none;
+}
+.bo{
+	width: 100%;
+	height: 260px;
+	background: #FFFFFF;
+	background-image: url(../img/rtedrr.png);
+	background-size: 100% 95%;
+	background-repeat: no-repeat no-repeat;
+	margin:2.5rem auto 0 auto;
+}
+.amap-zoomcontrol {
+    display: none;
+}
+.div{
+        overflow: hidden;
+        height: 1.25rem;
+    }
+    .box{
+        
+        white-space: nowrap;
+        overflow-y:auto;
+    }
+    /*.box::-webkit-scrollbar{
+        display: none;
+    }*/
+    .box1{
+        width: 70px;
+       
+		border: 0.0625rem solid orange ;
+		border: 0.0625rem ;
+        margin-left: 0.08rem;
+		text-align: center;
+		font-size: 0.75rem;
+        height: 100px;
+        background: #fff;
+		color: orange;
+        display: inline-block;
+    }
+.tra-id{
+	width: 100%;
+	text-align: center;
+	float: left;
+	margin-top:2rem;
+}
+
+.tra-id img{
+	border-radius: 50%;	
+}
+.mui-icon-arrowleft{
+	margin: 0.5rem;
+	color: #FFFFFF;
+}
+.week{
+	height:60px;
+	display: inline-block;
+	margin:5rem auto 0;
+	width:100%;
+	text-align: center;
+}
+li{
+	list-style: none;
+	float:left;
+	text-align:center;
+	width:33%;
+}
+.week-d{
+	width: 22%;
+	float: left;
+	text-align: center;
+	margin-left: 5%;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.shipin{
+	width: 98%;
+	height: 110px;
+	border-radius: 0.25rem;
+	background-color: white;
+	margin-top: 5px;
+	margin:0.5rem auto;
+	padding: 0.5rem;
+}
+.guanzhu{
+	width: 100%;
+	height: 6.875rem;
+	border-radius: 0.25rem;
+	background-color: white;
+	margin-top: -10px;
+	margin:auto;
+	padding: 0.1rem;
+}
+.shipin1{
+	width: 98%;
+	height: 110px;
+	border-radius: 0.25rem;
+	background-color: white;
+	margin-top: 10px;
+	margin:0.5rem auto;
+	padding: 0.5rem;
+}
+.shipin img{
+	width: 20px;
+	height: 20px;
+	vertical-align: middle;
+}
+.acs{
+}
+.acs2{
+	width: 40%;
+	float: right;
+}
+.sci3{
+	width: 70%;
+	float: left;
+	margin-top:1rem;
+}
+.photo{
+    float:left;
+    width:20%;
+	height: 100%;
+}
+.photo2{
+    float:left;
+    width:10%;
+	height: 100%;
+	margin-left: 0.625rem;
+}
+.vjs-modal-dialog-content{
+	height: 12.5rem;
+}
+#my-player{
+	height: 12.5rem;
+}
+#my-player_html5_api{
+	height: 12.5rem;
+	
+}
+.masked{
+			    opacity:0.3;
+			    filter: alpha(opacity=30);
+			    background-color:#000;
+			}
+.picT{
+	width: 70px;
+	height: 70px;
+	position: relative;
+	top:15px;
+}
+.picF{
+	height: 85px;
+	position: relative;
+	
+}
+.intro{
+    float:left;
+    width:60%;
+}
+.photo1{
+    float:left;
+    width:60%;
+	height: 100%;
+}
+.intro1{
+    float:right;
+    width:35%;
+}
+.btarea{
+	width: 60%;
+	float: right;
+}
+.btnArea{
+	width: 40%;
+	float: right;
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+.btnArea button{
+	text-align:center ;
+	font-size: 0.5rem;
+	width: 70px;
+	height: 1.875rem;
+	border-radius: 1rem;
+	border:none;
+	color: white;
+	margin:1rem 0.5rem;
+}
+.btnn{
+	width: 60px;
+	height: 30px;
+	background: url(../img/qss.png) no-repeat;
+	background-size: 100% 100%;
+	cursor:pointer;
+	outline: none;
+}
+.btnnn{
+
+	background: url(../img/dwaa.png) no-repeat;
+	background-size: 100% 100%;
+	cursor:pointer;
+	outline: none;
+}			
+.sci4{
+	width: 50%;
+	float: left;
+	margin-top: 10px;
+	margin-left: 1.5rem;
+}
+.btnArea1{
+	width: 20%;
+	float: right;
+	text-align: center;
+	margin:0 1.5%;
+}
+.btnArea1 button{
+	text-align:center ;
+	font-size: 0.5rem;
+	width: 70px;
+	height: 25px;
+	line-height:15px;
+	border-radius: 1rem;
+	border:none;
+	color: white;
+	margin:0.4rem 0;
+	float:left;
+}
+.dbtnn{
+	width: 60px;
+	height: 30px;
+	background: url(../img/dwaa.png) no-repeat;
+	background-size: 100% 100%;
+	cursor:pointer;
+	outline: none;
+}
+.dbtnnn{
+	width: 60px;
+	height: 30px;
+	background: url(../img/qss.png) no-repeat;
+	background-size: 100% 100%;
+	cursor:pointer;
+	outline: none;
+}
+.qu{
+	width: 95%;
+	height: 110px;
+	border-radius: 0.25rem;
+	margin-left: 2.5%;
+	background-color: white;
+	margin-top: 10px;
+	padding:0.5rem;
+}
+.sci5{
+	width: 100%;
+	float: left;
+}
+.sci5p{
+	float: left;
+	margin:0.5rem;
+} 
+.btnArea2{					
+	float: right;
+	text-align:center;
+}
+.btnArea2 button{
+	text-align:center ;
+	font-size: 0.5rem;
+	width: 90px;
+	height: 1.875rem;
+	border-radius: 1rem;
+	border:none;
+	color: white;
+}
+.qqbtnn{
+	width: 60px;
+	height: 30px;
+	background: url(../img/qss.png) no-repeat;
+	background-size: 100% 100%;
+	cursor:pointer;
+	outline: none;
+}
+
+.qbtnn{
+	width: 60px;
+	height: 30px;
+	background: url(../img/dwaa.png) no-repeat;
+	background-size: 100% 100%;
+	cursor:pointer;
+	outline: none;
+}
+.shenzhang{
+	width: 95%;
+	height: 160px;
+	border-radius: 8px;
+	margin-left: 2.5%;
+	background-color: white;
+	margin-top: 10px;
+}
+.pic2{				
+	width: 20px;
+	height: 20px;
+	vertical-align: middle;
+}
+.sci4p{
+	width: 70px;
+	text-align: center;					
+}
+
+.fen{
+	width: 15px;
+	float: left;
+	margin-top: 50px;
+	text-align: center;
+	
+}
+.mui-col-xs-2 img{
+	cursor: pointer;
+}
+.fend1{
+	float: left;
+	width: 15px;
+	height: 15px;
+	border: 1px solid orange;
+	border-radius: 50%;
+	
+}			
+.tpp{
+	width: 70px;
+	height: 70px;
+	float: left;
+	margin-left: 20px;
+	margin-top: 70px;
+}
+
+.js{
+	width: 50%;
+	float: right;
+	margin-top: 70px;
+}
+.tpp1{
+	float: right;
+	margin-right: 10px;
+}
+.tpp-imge{
+	width: 60px;
+	height: 60px;
+}
+
+.tpp-img{
+	width: 20px;
+	height: 20px;
+	margin-right: 5px;
+	margin-left: 5px;
+}
+.szjy{
+	width:95%;
+	/* height:200px; */
+	background:white;
+	margin:2.5% auto;
+	border-radius:0.5rem;
+	overflow:auto;
+	padding:0.5rem;					
+}
+#mui-content .mui-row .mui-col-xs-5 p{
+	margin:0 0 0 10px;
+	padding:0;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.mui-row{
+	margin:0.5rem;
+}
+.control{
+	width: 60px;
+	height: 30px;
+	background: url(../img/dwaa.png) no-repeat;
+	background-size: 100% 100%;
+	cursor:pointer;
+	outline: none;
+}
+.div1 { margin:0px auto; text-align:center; background:url('../img/tmp05.png');background-size:100% 100%;}
+.div2 {  height:90px; filter:alpha(Opacity=80);-moz-opacity:0.5;opacity: 0.5;z-index:100; background-color:gray;  }

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+  <display-name>DongTai20200615</display-name>
+  <welcome-file-list>
+   
+    <welcome-file>index.jsp</welcome-file>
+   
+  </welcome-file-list>
+ <session-config>
+    <session-timeout>-1</session-timeout>
+  </session-config>
+  <filter>
+    <filter-name>UserRightChecker</filter-name>
+    <filter-class>com.rj.bd.user.global.UserRightChecker</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>UserRightChecker</filter-name>
+    <url-pattern>*.jsp</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>UserRightChecker</filter-name>
+    <url-pattern>*.hf</url-pattern>
+  </filter-mapping>
+  <filter>
+    <filter-name>HFRouter</filter-name>
+    <filter-class>com.hbbc.util.hf.HFRouter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>HFRouter</filter-name>
+    <url-pattern>*.hf</url-pattern>
+  </filter-mapping>
+</web-app>
